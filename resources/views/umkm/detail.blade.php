@@ -165,7 +165,7 @@
                     </div>
                 </div>
                 <div>
-                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Total Sumbangan
+                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Total Bantuan
                         (Rp)</label>
                     <div class="mt-2 flex rounded-md shadow-sm">
                         <div class="relative flex flex-grow items-stretch focus-within:z-10">
