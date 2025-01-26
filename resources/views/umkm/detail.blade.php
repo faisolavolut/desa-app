@@ -7,8 +7,7 @@
             <!-- Gambar Produk -->
             <div class=" flex flex-col items-start px-2">
                 <div class="rounded-lg w-96 overflow-hidden shadow-lg">
-                    <img src="{{ '/storage/' . $product->product_photo }}" alt="Gambar Produk"
-                        class="w-96 h-full object-cover">
+                    <img src="{{ site_image($product->product_photo) }}" alt="Gambar Produk" class="w-96 h-full object-cover">
                 </div>
                 <div class="w-full">
                     @if (auth()->check())
@@ -80,7 +79,7 @@
                                 <div class="group relative border-b border-r border-gray-200 p-2">
                                     <div
                                         class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-200 group-hover:opacity-75">
-                                        <img src="{{ asset('storage/' . $catalog->file_path) }}" alt="TODO"
+                                        <img src="{{ site_image($catalog->file_path) }}" alt="TODO"
                                             class="h-full w-full object-cover object-center">
                                     </div>
 
@@ -107,7 +106,7 @@
                                 <div class="group relative border-b border-r border-gray-200 p-2">
                                     <div
                                         class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-200 group-hover:opacity-75">
-                                        <img src="{{ asset('storage/' . $documentation->file_path) }}" alt="TODO"
+                                        <img src="{{ site_image($documentation->file_path) }}" alt="TODO"
                                             class="h-full w-full object-cover object-center">
                                     </div>
                                 </div>
@@ -126,7 +125,7 @@
                                 <div>
                                     <div
                                         class="aspect-h-1 aspect-w-1 w-full flex flex-row items-center justify-center overflow-hidden rounded-lg ">
-                                        <img src="{{ asset('storage/' . $documentation->file_path) }}" alt="TODO"
+                                        <img src="{{ site_image($documentation->file_path) }}" alt="TODO"
                                             class="h-full w-80 object-cover object-center rounded-lg">
                                     </div>
                                     <strong>{{ $news->news_title }}</strong>

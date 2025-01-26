@@ -8,7 +8,7 @@
             @foreach ($products as $product)
                 <div class="group relative border-b border-r border-gray-200 p-4 sm:p-6">
                     <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-200 group-hover:opacity-75">
-                        <img src="{{ asset('storage/' . $product->product_photo) }}" alt="TODO"
+                        <img src="{{ site_image($product->product_photo) }}" alt="TODO"
                             class="h-full w-full object-cover object-center">
                     </div>
 

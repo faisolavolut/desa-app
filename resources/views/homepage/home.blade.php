@@ -1,7 +1,8 @@
 @extends('layouts.main')
 @section('title', 'Desa')
 @section('content')
-    <div class="bg-cover bg-center h-screen" style="background-image: url('{{ $heroSection->background_image }}');">
+    <div class="bg-cover bg-center h-screen"
+        style="background-image: url('{{ site_image($heroSection->background_image) }}');">
         <div class="flex flex-col items-center justify-center h-full text-center text-white px-4">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">{{ $heroSection->title }}</h1>
             <p class="text-lg md:text-xl mb-6">
@@ -28,7 +29,8 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 @foreach ($galleries as $gallery)
                     <div class="rounded-lg overflow-hidden shadow-lg">
-                        <img src="{{ $gallery->image_url }}" alt="{{ $gallery->title }}" class="w-full h-64 object-cover">
+                        <img src="{{ site_image($gallery->image_url) }}" alt="{{ $gallery->title }}"
+                            class="w-full h-64 object-cover">
                         <div class="p-4">
                             <h3 class="text-lg font-semibold">{{ $gallery->title }}</h3>
                         </div>
@@ -42,7 +44,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <!-- Gambar -->
                 <div class="overflow-hidden rounded-lg shadow-lg">
-                    <img src="{{ $section->image_url }}" alt="Profil Kelurahan" class="w-full h-full object-cover">
+                    <img src="{{ site_image($section->image_url) }}" alt="Profil Kelurahan"
+                        class="w-full h-full object-cover">
                 </div>
                 <!-- Konten -->
                 <div>
@@ -94,7 +97,7 @@
                 </div>
                 <!-- Gambar Berita -->
                 <div class="rounded-lg overflow-hidden shadow-lg">
-                    <img src="{{ $featuredImage }}" alt="Berita Gambar" class="w-full h-80 object-cover">
+                    <img src="{{ site_image($featuredImage) }}" alt="Berita Gambar" class="w-full h-80 object-cover">
                 </div>
             </div>
         </div>

@@ -41,7 +41,7 @@ class HomepageHeroSectionResource extends Resource
                     ->nullable(),
 
                 SpatieMediaLibraryFileUpload::make('background_image')
-                    ->collection('img')
+                    ->collection('background_image')
                     ->responsiveImages()
                     ->conversion('thumb')
                     ->label('Background Gambar')

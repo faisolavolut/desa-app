@@ -83,7 +83,7 @@ class HomepageSectionResource extends Resource
                             ->fileAttachmentsDirectory('program_csr') // Folder penyimpanan file
                             ->nullable(), // Field opsional
                         SpatieMediaLibraryFileUpload::make('image_url')
-                            ->collection('img')
+                            ->collection('image_url')
                             ->responsiveImages()
                             ->conversion('thumb')
                             ->label('Gambar')
