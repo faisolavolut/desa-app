@@ -48,7 +48,7 @@
                         class="w-full h-full object-cover">
                 </div>
                 <!-- Konten -->
-                <div>
+                <div class="content-rich">
                     <div class="mb-6">
                         <h3 class="text-xl font-semibold mb-2">Profil Kelurahan</h3>
                         <p class="text-gray-600">{!! $section->profile_kelurahan !!}</p>
@@ -87,11 +87,11 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <!-- Daftar Berita -->
-                <div>
+                <div class="content-rich">
                     @foreach ($news as $item)
                         <div class="mb-6">
                             <h3 class="text-xl font-semibold mb-2">{{ $item->title }}</h3>
-                            <div class="text-gray-600">{!! $item->description !!}</div>
+                            <div class="text-gray-600 ">{!! $item->description !!}</div>
                         </div>
                     @endforeach
                 </div>

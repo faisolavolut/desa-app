@@ -100,9 +100,16 @@ class UmkmProductResource extends Resource
                             ->maxSize(2048)
                             ->nullable(fn($record) => $record !== null),
 
-                        Textarea::make('umkm_profile')
+                        RichEditor::make('umkm_profile')
                             ->label('Profil UMKM')
-                            ->maxLength(65535),
+                            ->toolbarButtons([
+                                'bold',
+                                'italic',
+                                'underline',
+                                'bulletList',
+                                'orderedList',
+                                'link',
+                            ]),
 
                         RichEditor::make('facilities')
                             ->label('Fasilitas')

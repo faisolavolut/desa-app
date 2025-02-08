@@ -44,7 +44,8 @@
                         <div class="relative">
                             <button onclick="toggleDropdown()"
                                 class="focus:outline-none rounded-full bg-gray-500 flex flex-row items-center justify-center">
-                                <img class="w-8 h-8 rounded-full" src="https://via.placeholder.com/150" alt="Avatar">
+                                <img class="w-8 h-8 rounded-full"
+                                    src="https://ui-avatars.com/api/?name=a&color=FFFFFF&background=09090b" alt="Avatar">
                             </button>
                             <div id="dropdown"
                                 class="hidden absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg overflow-hidden">

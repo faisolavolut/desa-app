@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
+.content-rich a {
+    text-decoration: underline;
+    color: rgb(59 130 246);
+}

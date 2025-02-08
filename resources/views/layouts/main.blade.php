@@ -18,6 +18,13 @@
             }
         }
     </script>
+    @vite('resources/css/app.css')
+    <style>
+        .content-rich a {
+            text-decoration: underline;
+            color: rgb(59 130 246);
+        }
+    </style>
 </head>
 
 <body>

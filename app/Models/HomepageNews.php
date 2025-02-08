@@ -20,22 +20,27 @@ class HomepageNews extends Model implements HasMedia
         'description',
         'image_url',
     ];
-
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('img')
-            ->useDisk('public')
-            ->singleFile();
+        $this->addMediaCollection('image_url') // Gunakan nama koleksi konsisten
+            ->useDisk('public') // Disk public
+            ->singleFile(); // Batasi satu file
     }
     protected static function booted()
     {
-        static::saving(function ($product) {
-            $product->image_url = $product->getFirstMediaUrl('img') ?: null;
+        // Event `saved` untuk update URL setelah media tersedia
+        static::saved(function ($product) {
+            $product->updateQuietly([
+                'image_url' => $product->getFirstMediaUrl('image_url') ? removeStoragePrefix($product->getFirstMediaUrl('image_url')) : null,
+            ]);
         });
+
+        // Event `created` untuk media tambahan (opsional)
         static::created(function ($product) {
             app('events')->listen(MediaHasBeenAddedEvent::class, function ($event) use ($product) {
                 $model = $event->media->model;
                 $relativeUrl = $event->media->getUrl();
+
                 // Periksa apakah model yang diproses adalah yang sedang diproses
                 if ($model->id === $product->id) {
                     $product->updateQuietly([

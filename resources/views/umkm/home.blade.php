@@ -7,7 +7,8 @@
             style="z-index: -1">
             @foreach ($products as $product)
                 <div class="group relative border-b border-r border-gray-200 p-4 sm:p-6">
-                    <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-200 group-hover:opacity-75">
+                    <div
+                        class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-200 group-hover:opacity-75 h-44 max-h-44">
                         <img src="{{ site_image($product->product_photo) }}" alt="TODO"
                             class="h-full w-full object-cover object-center">
                     </div>

@@ -12,6 +12,11 @@
             box-shadow: none !important;
             border: none !important;
         }
+
+        .content-rich a {
+            text-decoration: underline;
+            color: rgb(59 130 246);
+        }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>

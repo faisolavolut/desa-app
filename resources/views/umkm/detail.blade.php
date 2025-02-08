@@ -69,20 +69,21 @@
                     </ul>
 
                     <!-- Tab Content -->
-                    <div id="content-profil" class="tab-content">
-                        <p class="text-gray-600">{{ $product->umkm_profile }}</p>
+                    <div id="content-profil" class="tab-content content-rich">
+                        <p class="text-gray-600 ">{!! $product->umkm_profile !!}</p>
                     </div>
                     <div id="content-katalog" class="tab-content hidden">
                         <div class="-mx-px grid grid-cols-2 border-l border-t border-gray-200 sm:mx-0 md:grid-cols-3 lg:grid-cols-4"
                             style="z-index: -1">
                             @foreach ($product->catalogs as $catalog)
                                 <div class="group relative border-b border-r border-gray-200 p-2">
-                                    <div
-                                        class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-200 group-hover:opacity-75">
-                                        <img src="{{ site_image($catalog->file_path) }}" alt="TODO"
-                                            class="h-full w-full object-cover object-center">
-                                    </div>
-
+                                    @if (!empty($catalog->file_path))
+                                        <div
+                                            class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-200 group-hover:opacity-75">
+                                            <img src="{{ site_image($catalog->file_path) }}" alt="TODO"
+                                                class="h-full w-full object-cover object-center">
+                                        </div>
+                                    @endif
                                     <div class="pb-4 pt-4 text-center flex flex-col gap-y-2">
                                         <div class="text-sm font-medium text-gray-900">
                                             <div>
@@ -114,22 +115,24 @@
                         </div>
                     </div>
                     <div id="content-fasilitas" class="tab-content hidden">
-                        <p class="text-gray-600">{!! $product->facilities !!}</p>
+                        <p class="text-gray-600 content-rich">{!! $product->facilities !!}</p>
                     </div>
                     <div id="content-rab" class="tab-content hidden">
-                        <p class="text-gray-600">{!! $product->rab !!}</p>
+                        <p class="text-gray-600 content-rich">{!! $product->rab !!}</p>
                     </div>
                     <div id="content-berita" class="tab-content hidden">
                         <div class="-mx-px flex flex-col">
                             @foreach ($product->news as $news)
                                 <div>
-                                    <div
-                                        class="aspect-h-1 aspect-w-1 w-full flex flex-row items-center justify-center overflow-hidden rounded-lg ">
-                                        <img src="{{ site_image($documentation->file_path) }}" alt="TODO"
-                                            class="h-full w-80 object-cover object-center rounded-lg">
-                                    </div>
+                                    @if (!empty($news->file_path))
+                                        <div
+                                            class="aspect-h-1 aspect-w-1 w-full flex flex-row items-center justify-center overflow-hidden rounded-lg ">
+                                            <img src="{{ site_image($news->file_path) }}" alt="TODO"
+                                                class="h-full w-80 object-cover object-center rounded-lg">
+                                        </div>
+                                    @endif
                                     <strong>{{ $news->news_title }}</strong>
-                                    <p>{!! $news->news_content !!}</p>
+                                    <p class="content-rich">{!! $news->news_content !!}</p>
                                 </div>
                             @endforeach
                         </div>

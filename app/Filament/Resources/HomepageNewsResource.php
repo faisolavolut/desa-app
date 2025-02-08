@@ -41,7 +41,7 @@ class HomepageNewsResource extends Resource
                             ->required(),
 
                         SpatieMediaLibraryFileUpload::make('image_url')
-                            ->collection('img')
+                            ->collection('image_url')
                             ->responsiveImages()
                             ->conversion('thumb')
                             ->label('Gambar Berita')
